@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devarakonda Himaja | PhD Student</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header/Hero Section */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 80px 0;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero .title {
+            font-size: 1.5em;
+            color: #764ba2;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero .location {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        /* Main Content */
+        main {
+            background: white;
+            margin: 40px auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        section {
+            padding: 60px 80px;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        /* Experience Cards */
+        .job {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .job:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job h3 {
+            font-size: 1.6em;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .job .company {
+            font-size: 1.2em;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .job .date {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .job ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .job ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .job ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        /* Skills Section with Visual Bars */
+        .skills-visual {
+            margin-bottom: 50px;
+        }
+
+        .skill-item {
+            margin-bottom: 25px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .skill-level {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .skill-bar-container {
+            background: #e0e0e0;
+            border-radius: 10px;
+            height: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            transition: width 1.5s ease;
+            position: relative;
+        }
+
+        .skill-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .skill-tag-group {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-top: 3px solid #667eea;
+        }
+
+        .skill-tag-group h3 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #555;
+            border: 1px solid #ddd;
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            border-left: 5px solid #764ba2;
+        }
+
+        .education-item h3 {
+            color: #333;
+            font-size: 1.4em;
+            margin-bottom: 8px;
+        }
+
+        .education-item .school {
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .education-item .date {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        .education-item .gpa {
+            color: #555;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Certifications */
+        .cert {
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+
+        .cert h3 {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .cert .issuer {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .cert .date {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            section {
+                padding: 40px 30px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+header {
+    position: relative;
+    padding: 40px 20px;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+/* Passport Photo – Top Right */
+.profile-photo {
+    position: absolute;
+    top: 10px;
+    right: 10px;   /* Changed from left to right */
+    width: 200px;   /* Small passport size */
+    height: 189px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 2px solid #ddd;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container hero">
+            <img src="passport_portfilo.jpg" alt="Devarakonda Himaja" class="profile-photo">
+            <h1>Devarakonda Himaja</h1>
+            <div class="title">PhD Student in Computational Structural Biology | M.Sc Biotechnology</div>
+            <div class="location">📍 Hyderabad, Telangana, INDIA </div>
+            <p>I have always been intrigued by the intersection of biology and technology, starting with school experiments like growing mustard seeds and conducting dissections.This curiosity led me to pursue biotechnology at the graduate level, where I developed a deep appreciation for biological systems.After my masters, I shifted to bioinformatics and AI, realizing the potential of computational tools in biology.My PhD research focuses on deciphering cysteine post-translational modifications in Domains of Unknown Function (DUF) and their possible implications in biochemical pathways and the development of databases and artificial intelligence-based prediction tools.I am also passionate about AI in Health Informatics, aiming to develop clinical decision systems and disease diagnosis tools.I submitted my PhD thesis on December 2025, and currently I am seeking post-doctoral opportunities in protein sciences or health informatics using AI.</p>
+            <div class="social-links">
+                <a href="mailto:devarakondahimaja6@gmail.com">Email</a>
+                <a href="www.linkedin.com/in/himaja-devarakonda" target="_blank">LinkedIn</a>
+                <a href="https://github.com/devhimd19" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Academic Degrees -->
+        <section id="experience">
+            <h2>Educational Qualifications</h2>
+            
+            <div class="job">
+                <h3>PhD Student</h3>
+                <h4>Computational Structural Biology</h4>
+                <div class="company">BITS Pilani, Hyderabad Campus, India</div>
+                <div class="date">August 2019 - December 2025 <i>(PhD Thesis submitted)</i></div>
+                <ul>
+                    <li>Developed a structure (DeepCys: https://deepcys.bits-hyderabad.ac.in/) and sequence-based database for the annotation of the cysteines for the Domains of Unknown Function Proteins (DUF) for seven biochemical pathways, namely Electron Transport Chain, Glutathione Metabolism, Fatty Acid Biosynthesis, Krebs Cycle, Fe-S-Cluster Biogenesis, Photosynthesis, and Pentose Phosphate Pathway. In this database, the distribution of DUFs around various diseases, biological pathways, and cysteine post-translational modifications has been studied (CysDuF: https://cysduf.bits-hyderabad.ac.in/).</li>
+                    <li>A sequence-based AI-algorithm was developed using Machine-learning and Deep-learning to decipher the cysteine post-translational modifications for the given protein sequence (SeqDeepCys: https://seqdeepcys.bits-hyderabad.ac.in/).</li>
+                    <li>Database has been developed to store the annotations of cysteine post-translational modifications based on the structure and sequence of the protein, which stores the information of the structural, sequence, biological, and protein microenvironment information (CysDBase: https://cysdbase.bits-hyderabad.ac.in/).</li>
+            </div>
+
+            <div class="job">
+                <h3>M.Sc Student</h3>
+                <div class="company">Vellore Institute of Technology, Vellore, Tamilnadu, India</div>
+                <div class="date">June 2015 - June 2017</div>
+                <ul>
+                    <li>Amplification of Mannosyl transferase gene of Mycobacterium tuberculosis for potential differential diagnostic use” (BCIL (Biotech Consortium India Limited) PROJECT) at AIG Hospital, Hyderabad.</li>
+                    <li>Studies on small organic and organometallic molecules and their anticancer activity, Master Thesis Project at CCMB Hyderabad.</li>
+                    <li>Implemented speculative execution pipelines and modularized Terraform code, achieving an estimated 98% reduction in pipeline deployment errors.</li>
+                    <li>Anti-aromatase activity of conjugate linoleic acid against wild and mutant from of human placental aromatase P450 in breast cancer.</li>
+                    <li>Toxicological profiling and characterization of Indazole Derivatives.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>B.Sc Student</h3>
+                <div class="company">Andhra Loyola College, Vijayawada, Andhra Pradesh, India</div>
+                <div class="date">August 2012 - June 2015</div>
+                <ul>
+                    <li>Verification of Mendelian Inheritance in Human - Begins</li>
+                    <p>The main goal of the project was to prove the Mendel’s law by taking human Mendel characters and PTC as an example. We have done a survey of the people for three months for the tasting of PTC(Phenylthiocarbamide) and made a data of people who were dominant and recessive and done further statistical analysis.</p>
+                </ul>
+            </div>
+        </section>
+        <!-- Technical Skills -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+                    <div class="skills-visual">
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Python</span>
+                        <span class="skill-level">7 Year 6 Months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Machine learning</span>
+                        <span class="skill-level">6 Year 6 Months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Deep learning</span>
+                        <span class="skill-level">6 Year 2 Months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Web development using FLASK</span>
+                        <span class="skill-level">6 Year 6 Months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 55%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name"> Database development using FLASK</span>
+                        <span class="skill-level">6 Year 6 Months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Large dataset curation</span>
+                        <span class="skill-level">6 Year 6 months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Exploratory Data Analysis</span>
+                        <span class="skill-level">6 Year 6 months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+            </section>
+ <!-- Laboratory Skills -->
+        <section id="skills">
+            <h2>Laboratory Skills</h2>
+            <div class="skills-visual">
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">SDS-PAGE Electrophoresis</span>
+                        <span class="skill-level">2 Year 6 Months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Agarose Gel Electrophoresis</span>
+                        <span class="skill-level">3 Year 6 Months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">UV-Visible spectroscopy</span>
+                        <span class="skill-level">2 Year 2 Months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Fluorescence spectroscopy</span>
+                        <span class="skill-level">2 Year 6 Months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 55%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Polymerase Chain Reaction (PCR)</span>
+                        <span class="skill-level">3 Year 6 months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">DNA Isolation</span>
+                        <span class="skill-level">2 Year 6 months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">IR spectroscopy</span>
+                        <span class="skill-level">1 Year 6 months</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!--Publications-->
+    <section id="publications">
+    <h2>Publications</h2>
+    <ul class="publication-list">
+        <li class="publication-item">
+            <h3>CysDuF Database: Annotation and Characterization of Cysteine Residues in Domain of Unknown Function Proteins Based on Cysteine Post-Translational Modifications, Their Protein Microenvironments, Biochemical Pathways, Taxonomy, and Diseases</h3>
+            <p class="authors"><u>Himaja, Devarakonda<sup>*</sup></u>, and Debashree Bandyopadhyay</p>
+            <p class="journal">Database: The Journal of Biological Databases and Curation, 2026</p>
+            <p class="DOI"><a href="https://doi.org/10.1093/database/baag002">https://doi.org/10.1093/database/baag002</a></p>
+        </li>
+        <li class="publication-item">
+            <h3>DeepCys: Structure-based multiple cysteine function prediction method trained on deep neural network: Case study on domains of unknown functions belonging to COX2 domains</h3>
+            <p class="authors">Nallapareddy, V., Bogam, S., <u>Devarakonda, H.<sup>*</sup></u>, Paliwal, S., & Bandyopadhyay, D. </p>
+            <p class="journal">Proteins: Structure, Function and Bioinformatics, 2021</p>
+            <p class="DOI"><a href="https://doi.org/10.1002/prot.26056">https://doi.org/10.1002/prot.26056</a></p>
+        </li>
+        <li class="publication-item">
+            <h3>Genotype distribution in relation to viral load in a large cohort of Indian patients with chronic hepatitis C virus infection: A retrospective analysis</h3>
+            <p class="authors">Balkumar Reddy Panyala<sup>1</sup> & Rathindra Mohan Mukherjee<sup>1</sup> & <u>Himaja Devarakonda</u><sup>1</sup> & Sivasathish Tadivaka<sup>1</sup> & Nagaraja Rao Padaki<sup>2</sup> & Mithun Sharma<sup>2</sup> & Nageshwar Reddy Duvvuru</p>
+            <p class="journal">Indian J Gastroenterol.2019</p>
+            <p class="DOI"><a href="https://doi.org/10.1007/s12664-019-00934-x">https://doi.org/10.1007/s12664-019-00934-x</a></p>
+        </li>
+    </ul>
+</section>
+<section id="conferences">
+    <h2>Conferences, Training & Workshops</h2>
+    <div class="job">
+                <h2>PhD Student</h2>
+                <div class="company">BITS Pilani, Hyderabad Campus, India</div>
+    <div class="conference-container">
+        <div class="ou_ai_ml_drug">
+            <h3>Two-Day National Workshop on "AI & ML Driven Drug Discovery and Design</h3>
+            <p class="role">ANRF-PAIR Program</p>
+            <p class="location">Department of Chemistry, University College of Science, Osmania University, Hyderabad and University of Hyderabad</p>
+            <p class="Dates">February 12-13, 2026 at the Department of Chemistry, University College of Science, Osmania University, Hyderabad</p>
+        </div>
+         <div class="india_embo">
+            <h3>India | EMBO Lecture Course: Structure, function, and quality control of proteins in cell organelles at CCMB, Hyderabad</h3>
+            <p class="role"><a href="https://meetings.embo.org/event/25-organelles" style="text-decoration:none; color:inherit;">India | EMBO Lecture Course</a></p>
+            <p class="location"><a href="https://www.ccmb.res.in/" style="text-decoration:none; color:inherit;">CCMB, Hyderabad</a></p>
+            <p class="Dates">November 10 - 14, 2026 at CCMB, Hyderabad</p>
+        </div>
+        <div class="conference-card">
+            <h3>International Union of Pure and Applied Chemistry (IUPAB) 2024</h3>
+            <p class="role"><a href="https://iupab.org/event/iupabcongress2024/" style="text-decoration:none; color:inherit;">IUPAB Congress 2024 + 62nd Annual Meeting of the Biophysical Society of Japan</a></a></p>
+            <p class="location"><a href="https://en.wikipedia.org/wiki/Kyoto_International_Conference_Center" style="text-decoration:none; color:inherit;">Kyoto International Conference Centre, Kyoto, Japan</a></p>
+            <p class="Dates">June 24 - 28, 2024 at Kyoto, Japan</p>
+        </div>
+        <div class="conference-card">
+            <h3>46th Indian Biophysical Society, 2024</h3>
+            <p class="role"><a href="https://events.tifrh.res.in/ibs2024/" style="text-decoration:none; color:inherit;">46th Indian Biophysical Society, 2024</a></a></p>
+            <p class="location">University of Hyderabad and TIFR, Hyderabad</p>
+            <p class="Dates">March 15 - 17, 2024 at TIFR Hyderabad, India & University Of Hyderabad</p>
+        </div>
+         <div class="conference-card">
+            <h3>45th Indian Biophysical Society, 2023</h3>
+            <p class="role"><a href="https://www.ncbs.res.in/events/indian-biophysical-society-meeting" style="text-decoration:none; color:inherit;">45th Indian Biophysical Society, 2023</a></a></p>
+            <p class="location"><a href="https://www.ncbs.res.in/" style="text-decoration:none; color:inherit;">NCBS, Bangalore</a></p>
+            <p class="Dates">March 27 - 29, 2023 at NCBS, Bangalore</p>
+        </div>
+            <div class="conference-card">
+            <h3>HySci, 2023</h3>
+            <p class="role"><a href="https://www.hysci2023.in/" style="text-decoration:none; color:inherit;">HySci, 2023</a></a></p>
+            <p class="location"><a href="https://www.niab.res.in/" style="text-decoration:none; color:inherit;">NIAB, Hyderabad</a></p>
+            <p class="Dates">March 17, 2023 at NIAB, Hyderabad</p>
+        </div>
+         <div class="conference-card">
+            <h3>International Conference on Drug Discovery, Schrodinger , 2022</h3>
+            <p class="role"><a href="https://www.bits-pilani.ac.in/event/international-conference-on-drug-discovery-2022-icdd-2022-success-stories-from-computation-to-clinical-trials/" style="text-decoration:none; color:inherit;">International Conference on Drug Discovery, Schrodinger , 2022</a></p>
+            <p class="location"><a href="https://www.bits-pilani.ac.in/goa/" style="text-decoration:none; color:inherit;">BITS Pilani, K K Birla Goa Campus</a></p>
+            <p class="Dates">November 10 - 11, 2022 at BITS Pilani, K K Birla Goa Campus, Goa</p>
+        </div>
+        <div class="conference-card">
+            <h3>43rd Indian Biophysical Society, Schrodinger, 2019</h3>
+            <p class="role"><a href="https://www.iiserkol.ac.in/~ibs2019/" style="text-decoration:none; color:inherit;">43rd Indian Biophysical Society, 2019</a></p>
+            <p class="location"><a href="https://www.iiserkol.ac.in/web/" style="text-decoration:none; color:inherit;">IISER Kolkata</a></p>
+            <p class="Dates">March 15 - 17, 2019 at IISER Kolkata, Kolkata</p>
+        </div>
+    </div>
+    </section>
+<section id="conferences">
+        <div class="job">
+                <h2>M.Sc Student</h2>
+                <div class="company">Vellore Institute of Technology, Vellore</div>
+        <div class="conference-card">
+            <h3>Six months Biotech Industrial Training Program (BCIL (Biotech Consortium India Limited) PROJECT)</h3>
+            <p class="role"><a href="https://ahcf.co.in/" style="text-decoration:none; color:inherit;">Asian Healthcare Foundation, AIG Hospitals, Hyderabad</a></p>
+            <p class="location"><a href="https://aighospitals.com/" style="text-decoration:none; color:inherit;">AIG Hospitals, Hyderabad</a></p>
+            <p class="Dates">December 2017 - May 2018</p>
+        </div> 
+        <div class="conference-card">
+            <h3>Training in Cell culture, Molecular Biology, and Bioinformatics at Centre for Liver Research and Diagnostics</h3>
+            <p class="role">Owaisi Hospitals, Hyderabad</p>
+            <p class="Dates">May 11th - June 3rd 2016</p>
+        </div>
+    </div>
+</section>
+<!--Teaching Assistant-->
+<section id="conferences">
+    <h2>Teaching Assistant</h2>
+<div class="skills-categories">
+    <div class="skill-tag-group">
+        <h3>Bioinformatics</h3>
+    </div>
+    <div class="skill-tag-group">
+        <h3>Biomodelling / Computational Structural Biology</h3>
+    </div>
+    <div class="skill-tag-group">
+        <h3>Biochemistry</h3>
+    </div>
+    <div class="skill-tag-group">
+        <h3>General Biology</h3>
+    </div>
+    <div class="skill-tag-group">
+        <h3>
+            Instrumental Method of Analysis (Principles and Techniques of Biochemistry and Molecular Biology)
+        </h3>
+    </div>
+    <div class="skill-tag-group">
+        <h3>Biology Laboratory for Engineering Undergraduate Students</h3>
+    </div>
+    <div class="skill-tag-group">
+        <h3>Biophysics</h3>
+    </div>
+</div>
+</section>
+        <!-- Contact Me -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="mailto:devarakondahimaja6@gmail.com" style="flex: 1; min-width: 250px; padding: 25px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 15px; border-left: 5px solid #667eea; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(10px)';this.style.boxShadow='0 10px 30px rgba(102,126,234,0.2)'" onmouseout="this.style.transform='translateX(0)';this.style.boxShadow='none'">
+                    <div style="font-size: 1.2em; color: #667eea; font-weight: 600; margin-bottom: 5px;">Email</div>
+                    <div style="color: #444;">devarakondahimaja6@gmail.com</div>
+                </a>
+                <a href="www.linkedin.com/in/himaja-devarakonda" target="_blank" style="flex: 1; min-width: 250px; padding: 25px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 15px; border-left: 5px solid #667eea; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(10px)';this.style.boxShadow='0 10px 30px rgba(102,126,234,0.2)'" onmouseout="this.style.transform='translateX(0)';this.style.boxShadow='none'">
+                    <div style="font-size: 1.2em; color: #667eea; font-weight: 600; margin-bottom: 5px;">LinkedIn</div>
+                    <div style="color: #444;">www.linkedin.com/in/himaja-devarakonda</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Devarakonda Himaja. All rights reserved.</p>
+        <p><a href="mailto:bhargavatech99@gmail.com">devarakondahimaja6@gmail.com</a> | Hyderabad, Telangana, India</p>
+    </footer>
+
+    <script>
+        // Animate skill bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.skill-bar');
+                    bars.forEach(bar => {
+                        bar.style.width = bar.style.width;
+                    });
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.querySelector('#skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+    </script>
+</body>
+</html>
