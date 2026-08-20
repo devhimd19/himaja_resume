@@ -93,6 +93,32 @@
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
         }
 
+        .profile-image {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .profile-image {
+        position: relative;
+        top: auto;
+        right: auto;
+        display: block;
+        margin: 0 auto 25px;
+    }
+}
+
         /* Main Content */
         main {
             background: white;
@@ -393,10 +419,11 @@
 <body>
     <header>
         <div class="container hero">
+             <img src="profile.jpg" alt="Devarakonda Himaja" class="profile-image">
             <h1>Devarakonda Himaja</h1>
             <div class="title">PhD Student in Computational Structural Biology | M.Sc Biotechnology</div>
             <div class="location">📍 Hyderabad, Telangana, INDIA </div>
-            <p>I have always been intrigued by the intersection of biology and technology, starting with school experiments like growing mustard seeds and conducting dissections.This curiosity led me to pursue biotechnology at the graduate level, where I developed a deep appreciation for biological systems.After my masters, I shifted to bioinformatics and AI, realizing the potential of computational tools in biology.My PhD research focuses on deciphering cysteine post-translational modifications in Domains of Unknown Function (DUF) and their possible implications in biochemical pathways and the development of databases and artificial intelligence-based prediction tools.I am also passionate about AI in Health Informatics, aiming to develop clinical decision systems and disease diagnosis tools.I submitted my PhD thesis on December 2025, and currently I am seeking post-doctoral opportunities in protein sciences or health informatics using AI.</p>
+            <p>I have always been intrigued by the intersection of biology and technology, starting with school experiments like growing mustard seeds and conducting dissections.This curiosity led me to pursue biotechnology at the graduate level, where I developed a deep appreciation for biological systems.After my masters, I shifted to bioinformatics and AI, realizing the potential of computational tools in biology.My PhD research focuses on deciphering cysteine post-translational modifications in Domains of Unknown Function (DUF) and their possible implications in biochemical pathways and the development of databases and artificial intelligence-based prediction tools.I am also passionate about AI in Health Informatics, aiming to develop clinical decision systems and disease diagnosis tools.I have completed my PhD on April 2026, and currently I am seeking post-doctoral opportunities in protein sciences or health informatics using AI.</p>
             <div class="social-links">
                 <a href="mailto:devarakondahimaja6@gmail.com">Email</a>
                 <a href="www.linkedin.com/in/himaja-devarakonda" target="_blank">LinkedIn</a>
